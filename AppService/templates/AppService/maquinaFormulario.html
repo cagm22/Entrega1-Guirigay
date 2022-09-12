@@ -1,0 +1,21 @@
+{% extends "AppService/padre.html" %}
+
+    {% load static %}
+
+    {% block titulo %}
+    <h1 class="mb-5">Formulario de Alta de Maquinas</h1>
+    {% endblock %}
+
+    {% block contenido_que_cambia %}
+
+
+    <h1> ESTE ES EL CONTENIDO QUE CAMBIA</h1>
+
+    <form action="{% url 'maquinaFormulario' %}" method="POST"> {% csrf_token %}
+        <table>
+            {{ formulario.as_table }}
+        </table>
+        <input type="submit" value="Enviar">
+    
+    </form>
+    {% endblock %}

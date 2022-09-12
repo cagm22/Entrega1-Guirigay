@@ -1,0 +1,24 @@
+{% extends "AppService/padre.html" %}
+
+    {% load static %}
+
+    {% block titulo %}
+    <h1 class="mb-5">Formulario de Alta a Clientes</h1>
+    {% endblock %}
+
+    {% block contenido_que_cambia %}
+
+
+    <h1> ESTE ES EL CONTENIDO QUE CAMBIA</h1>
+
+    <form action="{% url 'clienteFormulario' %}" method="POST"> {% csrf_token %}
+
+        <p>Razon Social: <input type="text" name="razon_social"></p>
+        <p>DNI o CUIT: <input type="number" name="dni_cuit"></p>
+        <p>Domicilio: <input type="text" name="domicilio"></p>
+        <p>Telefono: <input type="number" name="telefono"></p>
+        <input type="submit" value="enviar">
+
+    
+    </form>
+    {% endblock %}
