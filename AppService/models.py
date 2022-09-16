@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 # Create your models here.
@@ -14,23 +15,25 @@ class Cliente(models.Model):
 
 class Empleado(models.Model):
     nombre=models.CharField(max_length=40)
+    dni_cuit=models.IntegerField(default=0)
+    telefono=models.CharField(max_length=50, default=0)
     def __str__(self):
         return self.nombre
 
 class Maquina(models.Model):
-    marca=models.CharField(max_length=40)
-    modelo=models.CharField(max_length=40)
-    formato=models.CharField(max_length=40)
-    sistema=models.CharField(max_length=40)
-    contrasenia=models.CharField(max_length=40)
-    falla=models.CharField(max_length=200)
-    faltantes_tornillos=models.BooleanField()
-    rayas_roturas=models.BooleanField()
-    bateria=models.BooleanField()
-    enciende=models.BooleanField()
-    muestra_imagen=models.BooleanField()
-    tiene_leds=models.BooleanField()
-    cargador=models.BooleanField()
-    backup=models.BooleanField()
+    marca=models.CharField(max_length=40, default="/")
+    modelo=models.CharField(max_length=40, default="/")
+    formato=models.CharField(max_length=40, default="/")
+    sistema=models.CharField(max_length=40, default="/")
+    contrasenia=models.CharField(max_length=40, default="/")
+    falla=models.CharField(max_length=200, default="/")
+    faltantes_tornillos=models.BooleanField(default=False,blank=True)
+    rayas_roturas=models.BooleanField(default=False,blank=True)
+    bateria=models.BooleanField(default=False,blank=True)
+    enciende=models.BooleanField(default=False,blank=True)
+    muestra_imagen=models.BooleanField(default=False,blank=True)
+    tiene_leds=models.BooleanField(default=False,blank=True)
+    cargador=models.BooleanField(default=False,blank=True)
+    backup=models.BooleanField(default=False,blank=True)
     def __str__(self):
         return self.marca+ " " +str(self.modelo)

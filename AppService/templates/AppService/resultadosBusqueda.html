@@ -1,0 +1,27 @@
+{% extends "AppService/padre.html" %}
+
+    {% load static %}
+
+    {% block titulo %}
+    <h1 class="mb-5">Resultados de busqueda de Clientes</h1>
+    {% endblock %}
+
+    {% block contenido_que_cambia %}
+
+
+    <h1> Busqueda de Cursos</h1>
+    {% if clientes %}
+
+
+    <ul>
+        {% for cliente in clientes %}
+            <li>{{cliente.razon_social}}</li>
+            <li>{{cliente.telefono}}</li>
+            <br>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p> no se encontraron clientes</p>
+    {% endif %}
+
+    {% endblock %} 

@@ -15,4 +15,11 @@ class MaquinaForm(forms.Form):
     muestra_imagen=forms.BooleanField()
     tiene_leds=forms.BooleanField()
     cargador=forms.BooleanField()
-    backup=forms.BooleanField()
+    backup=forms.BooleanField() 
+
+class EmpleadoForm(forms.Form):
+    nombre=forms.CharField(max_length=40)
+    dni_cuit=forms.IntegerField()
+    telefono=forms.CharField(max_length=50)
+    def __str__(self):
+        return self.nombre

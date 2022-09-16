@@ -3,7 +3,7 @@
     {% load static %}
 
     {% block titulo %}
-    <h1 class="mb-5">Formulario de Alta de Maquinas</h1>
+    <h1 class="mb-5">Formulario de Alta a Empleado</h1>
     {% endblock %}
 
     {% block contenido_que_cambia %}
@@ -11,11 +11,10 @@
 
     <h3>Complete los datos a continuación</h3>
 
-    <form action="{% url 'maquinaFormulario' %}" method="POST"> {% csrf_token %}
+    <form action="{% url 'empleadoFormulario' %}" method="POST"> {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
         <input type="submit" value="Enviar">
-    
     </form>
     {% endblock %}

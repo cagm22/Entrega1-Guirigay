@@ -3,18 +3,21 @@
     {% load static %}
 
     {% block titulo %}
-    <h1 class="mb-5">Formulario de busqueda de Clientes</h1>
+    <h1 class="mb-5">Formulario de busqueda de Clientes por telefono</h1>
     {% endblock %}
 
     {% block contenido_que_cambia %}
 
 
-    <h1> ESTE ES EL CONTENIDO QUE CAMBIA</h1>
+    <h3>Ingrese los terminos de búsqueda a continuación</h3>
 
     <form action="/AppService/buscar/" method="GET"> 
-        <input type="number" name="cliente" id="cliente">
+        <input type="number" name="telefono" id="telefono">
         <input type="submit" value="Buscar">
 
     
     </form>
+
+    {{ mensaje }}
+    
     {% endblock %}
