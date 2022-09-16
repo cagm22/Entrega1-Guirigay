@@ -35,6 +35,9 @@ http://127.0.0.1:8000/AppService/
 
 3. Ahora dentro de la pagina de inicio accedemos al indice del sitio 
 web donde tenemos las instancias desarrolladas hasta el momento
+
+4. Puede crear empleados, maquinas, y empleados, incluso se puede buscar a estos ultimos
+por numero de telefono en el formulario de busqueda de Clientes por Telefono.
 ```
 
 ## Construido con 🛠️
